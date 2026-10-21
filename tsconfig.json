@@ -1,0 +1,24 @@
+{
+  // Server-side code: Vercel functions (api/), shared modules (lib/), scripts and server tests.
+  // NodeNext resolution enforces explicit ".js" import extensions, which the Vercel Node.js
+  // runtime needs because the package is an ES module ("type": "module").
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true
+  },
+  "include": ["api", "lib", "scripts", "tests/server", "vite.config.ts", "vitest.config.ts"]
+}

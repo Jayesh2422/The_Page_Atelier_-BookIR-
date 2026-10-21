@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+/*
+ * Sage & Paper — The Page Atelier design tokens.
+ * Every colour used by components comes from these variables (bg-cream, text-olive, …).
+ */
+@theme {
+  --color-cream: #faf7f0;
+  --color-sage: #7d8f69;
+  --color-sage-dark: #5f6f4f; /* hover/pressed state of sage controls */
+  --color-sage-soft: #e6eadd; /* tinted sage surface */
+  --color-olive: #34412e;
+  --color-terracotta: #c87555;
+  --color-terracotta-dark: #a85a3c; /* accessible terracotta for small text */
+  --color-terracotta-soft: #f4e3d9;
+  --color-linen: #e9e3d8;
+  --color-ink: #292d26;
+  --color-muted: #6b7064;
+  --color-white: #ffffff;
+
+  --font-serif: 'DM Serif Display', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-sans: 'DM Sans Variable', 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --shadow-soft: 0 1px 2px rgb(41 45 38 / 0.04), 0 4px 16px rgb(41 45 38 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(41 45 38 / 0.05), 0 12px 28px rgb(41 45 38 / 0.1);
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply text-olive;
+  }
+  ::selection {
+    background: var(--color-sage-soft);
+    color: var(--color-olive);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.18em] text-terracotta-dark uppercase;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

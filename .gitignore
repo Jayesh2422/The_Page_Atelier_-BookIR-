@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.vercel/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+# Large local datasets (download separately — see README)
+data/raw/
+data/local-db/
+.tmp-fn/

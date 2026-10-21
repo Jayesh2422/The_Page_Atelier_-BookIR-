@@ -1,0 +1,23 @@
+{
+  // Browser code (React + Vite). Only type-level imports from lib/ are allowed here.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "types": ["vite/client", "@testing-library/jest-dom/vitest"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": true,
+    "paths": { "@/*": ["./src/*"] }
+  },
+  "include": ["src", "tests/frontend"]
+}
